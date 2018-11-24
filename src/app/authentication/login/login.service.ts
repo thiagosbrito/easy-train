@@ -10,8 +10,8 @@ export class LoginService {
 
   authenticate(user: String, password: String): Observable<boolean>{
 
-    const url = 'http://pkpservice.herokuapp.com/health';
-    this.httpClient.get(url).subscribe(json => console.log(json));
+    const url = 'https://pkpservice.herokuapp.com/login';
+    this.httpClient.post(url, `${password}`).subscribe(json => console.log(json));
 
     return of(true);
   }

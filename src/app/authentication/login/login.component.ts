@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
-import { map, subscribeOn } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,6 +14,8 @@ export class LoginComponent implements OnInit {
   loginFormGroup: FormGroup;
   userLogin: String = '';
   userPass: String = '';
+  authFailed: Boolean;
+
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService
@@ -27,9 +31,20 @@ export class LoginComponent implements OnInit {
   }
 
   performLogin(): void {
-    this.loginService.authenticate(this.userLogin, this.userPass).subscribe((data)=> {
-      console.log(data);
+
+    const req = this.loginService.authenticate(this.loginFormGroup.controls['userLoginfrm'].value,
+      this.loginFormGroup.controls['userPassfrm'].value).pipe(catchError(val => of(false)));
+
+    req.subscribe((data) => {
+      console.log(`Auth Response: ${data}`);
+      if (!data) {
+        this.authFailed = true;
+      } else {
+        this.authFailed = false;
+      }
+      return data;
     })
+
   }
 }
 
