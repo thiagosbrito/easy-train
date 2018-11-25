@@ -21,9 +21,13 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private loginService: LoginService,
     private router: Router
-  ) { }
+  ) {
+    this.createForm();
+   }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  createForm() {
     this.loginFormGroup = this.formBuilder.group({
       userLoginfrm: [
         { value: this.userLogin, disabled: false }, [Validators.required]],
@@ -46,7 +50,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       }
       return data;
-    })
+    });
 
   }
 }

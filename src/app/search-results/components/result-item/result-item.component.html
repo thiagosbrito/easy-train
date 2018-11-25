@@ -2,37 +2,32 @@
   <div class="rounded-box trip-info mt-3">
     <div class="title">
       <div class="train-model"></div>
-      <div class="trip-number">EIC3126</div>
+      <div class="trip-number">{{ticketDetail.trainName}}</div>
     </div>
     <div class="route mt-4">
       <div class="departure">
         <span>
-          Krakow Dworzec Glowny
+          {{ticketDetail.source}}
         </span>
         <span class="float-right time departure">
-          08:00
+          {{ticketDetail.departure}}
         </span>
       </div>
       <div class="stops intersection">
-        <ul>
-          <li class="mt-4 mb-4 city-stop"><span class="city-name">city 1</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 2</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 3</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 4</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 5</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 6</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 7</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 8</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 9</span></li>
-          <li class="mb-4 city-stop"><span class="city-name">city 0</span></li>
+        <ul class="pt-4">
+          <li
+            class="mb-4 city-stop"
+            *ngFor="let stop of ticketDetail.stops">
+              <span class="city-name">{{stop.stationName}}</span>
+          </li>
         </ul>
       </div>
       <div class="arrival">
         <span>
-          Warszawa Centralna
+          {{ticketDetail.destination}}
         </span>
         <span class="float-right time arrival">
-          11:20
+          {{ticketDetail.arrival}}
         </span>
       </div>
     </div>
@@ -40,7 +35,7 @@
       <ul class="list-prices">
         <li class="item">
           <p class="description">
-            1st class: <b>139.99pln</b>
+            1st class: <b>{{ticketDetail.price}}pln</b>
             <button class="btn btn-primary float-right">
               select seat
             </button>
@@ -48,7 +43,7 @@
         </li>
         <li class="item">
           <p class="description">
-            2nd class: <b>199.99pln</b>
+            2nd class: <b>{{ticketDetail.priceSecondClass}}pln</b>
             <button class="btn btn-primary float-right">
               select seat
             </button>

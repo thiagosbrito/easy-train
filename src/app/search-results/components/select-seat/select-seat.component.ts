@@ -19,7 +19,6 @@ export class SelectSeatComponent implements OnInit {
     };
     this.bsModalRef = this.modal.show(MessageModalComponent, {initialState });
     this.bsModalRef.content.closeBtnName = 'Close';
-
   }
 
   ngOnInit() {

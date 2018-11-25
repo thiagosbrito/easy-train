@@ -8,7 +8,7 @@ export class LoginService {
   url: String = 'https://pkpservice.herokuapp.com/';
 
   authenticate(user: String, password: String): Observable<any> {
-    let authenticated = this.httpClient.post(`${this.url}login`, `${password}`);
+    const authenticated = this.httpClient.post(`${this.url}login`, `${password}`);
     return authenticated;
   }
 }

@@ -6,13 +6,28 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { ResultItemComponent } from './components/result-item/result-item.component';
 import { SelectSeatComponent } from './components/select-seat/select-seat.component';
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
+import { SummaryComponent } from './components/summary/summary.component';
+import { FindTicketsService } from '../home/services/find-tickets.service';
 
 @NgModule({
-  declarations: [SearchResultComponent, ResultItemComponent, SelectSeatComponent, MessageModalComponent],
+  declarations: [
+    SearchResultComponent,
+    ResultItemComponent,
+    SelectSeatComponent,
+    MessageModalComponent,
+    SummaryComponent
+  ],
   imports: [
     CommonModule,
     SearchResultsRoutingModule,
     ModalModule.forRoot()
-  ]
+  ],
+  exports: [
+    MessageModalComponent
+  ],
+  entryComponents: [
+    MessageModalComponent
+  ],
+  providers: [FindTicketsService]
 })
 export class SearchResultsModule { }

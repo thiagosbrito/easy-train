@@ -6,8 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { LoginService } from './authentication/login/login.service';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { SearchResultsModule } from './search-results/search-results.module';
 import { NotificationService } from './notification/notification.service';
@@ -15,12 +15,13 @@ import { NotificationService } from './notification/notification.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthenticationModule,
+    CoreModule,
     HomeModule,
     SearchResultsModule,
     FormsModule,
@@ -28,9 +29,9 @@ import { NotificationService } from './notification/notification.service';
     CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule
   ],
-  providers: [LoginService, NotificationService],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

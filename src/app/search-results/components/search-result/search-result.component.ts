@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FindTicketsService } from '../../../home/services/find-tickets.service';
 
 @Component({
   selector: 'app-search-result',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultComponent implements OnInit {
-
-  constructor() { }
+  ticketsList: any;
+  constructor(private ticketsService: FindTicketsService) {
+    this.getTickets();
+  }
 
   ngOnInit() {
+  }
+
+  getTickets() {
+    this.ticketsService.getTickets().subscribe(res => {
+      this.ticketsList = res;
+    });
   }
 
 }

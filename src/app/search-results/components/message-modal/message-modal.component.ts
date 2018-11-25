@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-message-modal',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-modal.component.scss']
 })
 export class MessageModalComponent implements OnInit {
-
-  constructor() { }
+  title: string;
+  subtitle: string;
+  userId: number;
+  constructor(public bsModalRef: BsModalRef) { }
 
   ngOnInit() {
   }

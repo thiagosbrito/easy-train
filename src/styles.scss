@@ -58,6 +58,18 @@ h1 {
   font-size: 26px;
   text-align: center;
 }
+h2 {
+  color: #33348E;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  small {
+    color: lighten(#33348E, 20%);
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+  }
+}
 
 form {
   label {
