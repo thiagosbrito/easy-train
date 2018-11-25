@@ -1,18 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class LoginService {
   constructor(private httpClient: HttpClient) { }
-  
+  url: String = 'https://pkpservice.herokuapp.com/';
 
-  authenticate(user: String, password: String): Observable<boolean>{
-
-    const url = 'https://pkpservice.herokuapp.com/login';
-    this.httpClient.post(url, `${password}`).subscribe(json => console.log(json));
-
+  authenticate(user: String, password: String): Observable<boolean> {
+    this.httpClient.post(`${this.url}login`, `${password}`).subscribe(json => console.log(json));
     return of(true);
   }
 }
