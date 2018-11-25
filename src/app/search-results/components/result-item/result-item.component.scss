@@ -1,0 +1,129 @@
+@import '../../../styles/variables.scss';
+.result-item-container {
+  padding: 0 16px;
+  color: $main-color;
+  .result-item {
+    font-size: 18px;
+    &:hover {
+      background-color: #E8E8E8
+    }
+    .available-seats {
+      .seats-number {
+        font-weight: bolder;
+      }
+    }
+    .price {
+      .starting-price {
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  .train-model {
+    width: 35px;
+    height: 20px;
+    background-image: url('/assets/images/train.png');
+  }
+  .trip-number {
+    font-weight: 600;
+    color: #33348E;
+    font-size: 18px;
+    padding-left: 16px;
+  }
+}
+
+.route {
+  display: flex;
+  flex-direction: column;
+  .departure {
+    position: relative;
+    padding-left: 28px;
+    &:before {
+      content: '';
+      background-color: $departure-color;
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+  }
+  .arrival {
+    position: relative;
+    padding-left: 28px;
+    &:before {
+      content: '';
+      background-color: $arrival-color;
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+  }
+  .departure,
+  .arrival {
+    .time {
+      padding: 3px 16px;
+      border-radius: 4px;
+      color: #FFF;
+      font-weight: bolder;
+      &.departure {
+        color: #fff;
+        background-color: $departure-color
+      }
+      &.arrival {
+        background-color: $arrival-color
+      }
+    }
+  }
+  .intersection {
+    width: 99%;
+    margin-left: 1%;
+    flex: 1 auto;
+    border-left: 2px dashed rgba(#707070, 0.65);
+    .dots {
+      height: 100%;
+      border-left: 1px dashed #707070;
+    }
+    .city-stop {
+      padding-left: 16px;
+    }
+  }
+}
+
+.prices {
+  .list-prices {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .item {
+      width: 100%;
+      display: inline-block;
+      background-color: #E3E3F8;
+      border-radius: 4px;
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+      p.description {
+        padding-top: 12px;
+        padding-left: 12px;
+      }
+      button.btn-primary {
+        margin-top: -12px;
+      }
+    }
+  }
+}
+
+.result-item {
+  .route {
+    height: 90px;
+  }
+}
