@@ -8,6 +8,7 @@ import { SelectSeatComponent } from './components/select-seat/select-seat.compon
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { FindTicketsService } from '../home/services/find-tickets.service';
+import { SuccessComponent } from './components/success/success.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FindTicketsService } from '../home/services/find-tickets.service';
     ResultItemComponent,
     SelectSeatComponent,
     MessageModalComponent,
-    SummaryComponent
+    SummaryComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,

@@ -9,10 +9,10 @@ import { FindTicketsService } from '../../../home/services/find-tickets.service'
 export class ResultItemComponent implements OnInit {
   ticketDetail: any;
   constructor(private ticketService: FindTicketsService) {
-    this.getDetail();
-   }
+  }
 
   ngOnInit() {
+    this.getDetail();
   }
 
   getDetail() {

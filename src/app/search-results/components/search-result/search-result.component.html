@@ -1,5 +1,5 @@
 <div class="search-results-container">
-  <div class="rounded-box result-item mt-3" *ngFor="let ticket of ticketsList">
+  <div class="rounded-box result-item mt-3" *ngFor="let ticket of ticketsList" (click)="selectTicket()">
     <div class="title">
       <div class="train-model"></div>
       <div class="trip-number">{{ticket.trainName}}</div>
