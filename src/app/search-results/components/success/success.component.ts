@@ -10,9 +10,9 @@ export class SuccessComponent implements OnInit {
 
   constructor(private router: Router) {
     setTimeout(() => {
-      this.router.navigate(['/home', { hasTicket: true }]);
+      this.router.navigate(['/home'], { queryParams: { hasTicket: true } });
     }, 3000);
-   }
+  }
 
   ngOnInit() {
   }

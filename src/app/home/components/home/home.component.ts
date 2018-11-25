@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  hasTicket: boolean;
+  constructor(private route: ActivatedRoute) {
+    this.hasTicket = false;
+    this.route.queryParams.subscribe((params) => {
+      if (params.hasTicket) {
+        this.hasTicket = params.hasTicket;
+      }
+    });
+   }
 
   ngOnInit() {
   }
