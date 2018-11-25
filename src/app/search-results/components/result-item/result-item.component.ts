@@ -16,7 +16,7 @@ export class ResultItemComponent implements OnInit {
   }
 
   getDetail() {
-    this.ticketService.getDetails('dasdas', 'dasdas').subscribe(res => {
+    this.ticketService.getDetails('Warsaw', 'Krakow ').subscribe(res => {
       this.ticketDetail = res;
     });
   }
