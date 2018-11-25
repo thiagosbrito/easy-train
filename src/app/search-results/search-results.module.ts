@@ -8,6 +8,7 @@ import { SelectSeatComponent } from './components/select-seat/select-seat.compon
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { FindTicketsService } from '../home/services/find-tickets.service';
+import { SucessMessageComponent } from './components/success-message/sucess-message.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FindTicketsService } from '../home/services/find-tickets.service';
     ResultItemComponent,
     SelectSeatComponent,
     MessageModalComponent,
+    SucessMessageComponent,
     SummaryComponent
   ],
   imports: [
@@ -23,10 +25,12 @@ import { FindTicketsService } from '../home/services/find-tickets.service';
     ModalModule.forRoot()
   ],
   exports: [
-    MessageModalComponent
+    MessageModalComponent,
+    SucessMessageComponent
   ],
   entryComponents: [
-    MessageModalComponent
+    MessageModalComponent,
+    SucessMessageComponent
   ],
   providers: [FindTicketsService]
 })
