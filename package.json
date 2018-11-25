@@ -7,12 +7,12 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",    
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build"
   },
   "private": true,
   "dependencies": {
@@ -25,8 +25,13 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "@ngx-loading-bar/core": "^3.0.0",
+    "@ngx-loading-bar/http": "^3.0.0",
+    "@ngx-loading-bar/http-client": "^3.0.0",
+    "@ngx-loading-bar/router": "^3.0.0",
     "angular-fontawesome": "^1.0.0",
     "bootstrap": "^4.1.1",
+    "bourbon": "^5.1.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "font-awesome": "^4.7.0",

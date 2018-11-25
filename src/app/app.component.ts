@@ -11,6 +11,8 @@ export class AppComponent {
   showNavbar: boolean;
   constructor(private route: ActivatedRoute) {
     this.showNavbar = true;
-    console.log(route);
+    if (window.location.pathname === '/login') {
+      this.showNavbar = false;
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { MessageModalComponent } from '../message-modal/message-modal.component';
 import { SucessMessageComponent } from '../success-message/sucess-message.component';
+import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -11,7 +12,7 @@ import { first } from 'rxjs/operators';
 })
 export class SelectSeatComponent implements OnInit {
   bsModalRef: BsModalRef;
-  constructor(private modal: BsModalService, private modalConfirm : BsModalService) { }
+  constructor(private modal: BsModalService, private router: Router, private modalConfirm : BsModalService) { }
 
   openModal() {
     const initialState  = {
@@ -34,6 +35,10 @@ export class SelectSeatComponent implements OnInit {
   } 
 
   ngOnInit() {
+  }
+
+  goToCheckout() {
+    this.router.navigate(['/summary']);
   }
 
 }

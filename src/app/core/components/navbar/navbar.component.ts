@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+  displayMenu: boolean;
   constructor(private route: ActivatedRoute) {
     route.url.subscribe(url => {
       console.log(url);
@@ -15,6 +15,15 @@ export class NavbarComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.displayMenu = false;
+  }
+
+  showMenu() {
+    this.displayMenu = true;
+  }
+
+  hideMenu() {
+    this.displayMenu = false;
   }
 
 }

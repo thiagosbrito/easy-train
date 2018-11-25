@@ -9,6 +9,7 @@ import { MessageModalComponent } from './components/message-modal/message-modal.
 import { SummaryComponent } from './components/summary/summary.component';
 import { FindTicketsService } from '../home/services/find-tickets.service';
 import { SucessMessageComponent } from './components/success-message/sucess-message.component';
+import { SuccessComponent } from './components/success/success.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SucessMessageComponent } from './components/success-message/sucess-mess
     SelectSeatComponent,
     MessageModalComponent,
     SucessMessageComponent,
-    SummaryComponent
+    SummaryComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,

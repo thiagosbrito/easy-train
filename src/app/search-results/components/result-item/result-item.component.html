@@ -1,4 +1,4 @@
-<div class="result-item-container">
+<div class="result-item-container" *ngIf="ticketDetail != null">
   <div class="rounded-box trip-info mt-3">
     <div class="title">
       <div class="train-model"></div>
@@ -36,7 +36,7 @@
         <li class="item">
           <p class="description">
             1st class: <b>{{ticketDetail.price}}pln</b>
-            <button class="btn btn-primary float-right">
+            <button class="btn btn-primary float-right" [routerLink]="['/select-seat/1']">
               select seat
             </button>
           </p>
@@ -44,7 +44,7 @@
         <li class="item">
           <p class="description">
             2nd class: <b>{{ticketDetail.priceSecondClass}}pln</b>
-            <button class="btn btn-primary float-right">
+            <button class="btn btn-primary float-right" [routerLink]="['/select-seat/1']">
               select seat
             </button>
           </p>

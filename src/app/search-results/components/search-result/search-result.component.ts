@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FindTicketsService } from '../../../home/services/find-tickets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-result',
@@ -8,7 +9,7 @@ import { FindTicketsService } from '../../../home/services/find-tickets.service'
 })
 export class SearchResultComponent implements OnInit {
   ticketsList: any;
-  constructor(private ticketsService: FindTicketsService) {
+  constructor(private ticketsService: FindTicketsService, private router: Router) {
     this.getTickets();
   }
 
@@ -19,6 +20,10 @@ export class SearchResultComponent implements OnInit {
     this.ticketsService.getTickets().subscribe(res => {
       this.ticketsList = res;
     });
+  }
+
+  selectTicket() {
+    this.router.navigate(['/result/1']);
   }
 
 }

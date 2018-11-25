@@ -11,6 +11,10 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { SearchResultsModule } from './search-results/search-results.module';
 import { NotificationService } from './notification/notification.service';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { LoadingBarHttpModule } from '@ngx-loading-bar/http';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 
 @NgModule({
@@ -29,7 +33,12 @@ import { NotificationService } from './notification/notification.service';
     CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LoadingBarHttpClientModule,
+    LoadingBarHttpModule,
+    LoadingBarRouterModule,
+    LoadingBarHttpClientModule,
+    LoadingBarModule.forRoot()
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent]

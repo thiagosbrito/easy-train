@@ -4,6 +4,7 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { ResultItemComponent } from './components/result-item/result-item.component';
 import { SelectSeatComponent } from './components/select-seat/select-seat.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { SuccessComponent } from './components/success/success.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'summary',
     component: SummaryComponent
+  },
+  {
+    path: 'success',
+    component: SuccessComponent
   }
 ];
 
