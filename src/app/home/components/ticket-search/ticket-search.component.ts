@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FindTicketsService } from '../../services/find-tickets.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+// import * as koleo from 'koleo';
 
 @Component({
   selector: 'app-ticket-search',
@@ -19,6 +20,13 @@ export class TicketSearchComponent implements OnInit {
     private router: Router
   ) {
     this.createForm();
+    // koleo.station().then(
+    //   (station) => {
+    //     console.log(station);
+    //   }
+    // ).catch((error) => {
+    //   console.log(error);
+    // });
   }
 
   createForm() {
